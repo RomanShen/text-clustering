@@ -9,13 +9,14 @@ def build_vocab(file_path, count_thr=2):
             words = line.split(' ')
             for word in words:
                 counts[word] = counts.get(word, 0) + 1
-        vocab = [w for w, n in counts.items() if n >= count_thr]
-        return vocab
+    vocab = [w for w, n in counts.items() if n >= count_thr]
+    return vocab
 
 
 def generate_bow(file_path, ignore_freq=True):
     # vocab = build_vocab(file_path)
-    vocab = ['排球','北京','届','以','理工','夺冠','人类','在','年','大学','机器', '的','了','流水','是','人工','专业','计算机','叶子','智能','运动会','中国','荷塘']
+    vocab = ['排球', '北京', '届', '以', '理工', '夺冠', '人类', '在', '年', '大学', '机器', '的', '了', '流水', '是', '人工', '专业', '计算机', '叶子',
+             '智能', '运动会', '中国', '荷塘']
     bows = []
     with open(file_path, 'r', encoding='utf-8') as f:
         for line in f:
