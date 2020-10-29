@@ -13,6 +13,3 @@ def pca(X, num_p=2):
     eigen_vectors = eigen_vectors[:, index]
     return np.matmul(X, eigen_vectors[:, :num_p])
 
-
-# X = np.random.random((2, 4))
-# print(pca(X))
